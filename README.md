@@ -10,9 +10,16 @@ Step 2: Write the logic to get the computer choice (write a function that random
     Create a new function named getComputerChoice
     Code a random selector
     Assign return values to random selector (“rock”, “paper” or “scissors”)
-    Print value selected
-
+    Print value 
     
+Step 3: Write the logic to get the human choice (write a function that takes the user choice and returns it.)
+
+    Create a new function named getHumanChoice.
+    User inputs choice
+    choice is stored in variable
+    choice is printed
+
+
 
 
 
