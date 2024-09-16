@@ -16,11 +16,6 @@ console.log(getComputerChoice())
 
 //Step 3 Code Below//
 
-//Create a new function named getHumanChoice.
-//User inputs choice
-//choice is stored in variable
-//choice is printed//
-
     function getHumanChoice() {
         let humanChoice = prompt("Please enter \"rock\", \"paper\" or \"scissors\". Alternative inputs will default to \"rock\".");
 
@@ -40,4 +35,15 @@ console.log(getComputerChoice())
     }
 
     console.log(getHumanChoice())
+
+//Step 4 Code Below//
+
+//Create two new variables named humanScore and computerScore in the global scope.
+//Start variables with 0
+
+let humanScore = 0;
+let computerScore = 0;
+
+console.log(humanScore);
+console.log(computerScore);
 
