@@ -19,6 +19,11 @@ Step 3: Write the logic to get the human choice (write a function that takes the
     choice is stored in variable
     choice is printed
 
+Step 4: Declare the players score variables (write variables to keep track of the players score.)
+
+    Create two new variables named humanScore and computerScore in the global scope.
+    Start variables with 0
+
 
 
 
