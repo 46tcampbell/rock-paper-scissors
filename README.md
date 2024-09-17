@@ -33,5 +33,10 @@ Step 5: Write the logic to play a single round (write a function that takes the 
     Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
     Increment the humanScore or computerScore variable based on the round winner.
 
+Step 6: Write the logic to play the entire game (write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.)
 
+    Create a new function named playGame.
+    Move your playRound function and score variables so that they’re declared inside of the new playGame function
+    Play 5 rounds by calling playRound 5 times.
+    Declare winner after 5 rounds.
 
