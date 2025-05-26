@@ -1,32 +1,29 @@
 function getComputerChoice() {
-    let randomNumber =  Math.floor(Math.random() * 100);
+    let randomNumber = Math.floor(Math.random() * 100);
 
-        if (randomNumber >= 0 && randomNumber <= 32) {
-            return "rock";
-        } else if (randomNumber >= 33 && randomNumber <= 65) {
-            return "paper";
-        } else {
-            return "scissors";
-        }
+    if (randomNumber >= 0 && randomNumber <= 32) {
+        return "rock";
+    } else if (randomNumber >= 33 && randomNumber <= 65) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
 }
 
-    function getHumanChoice() {
-        let humanChoice = prompt("Please enter \"rock\", \"paper\" or \"scissors\". Alternative inputs will default to \"rock\".");
+function getHumanChoice() {
+    let humanChoice = prompt("Please enter \"rock\", \"paper\" or \"scissors\". Alternative inputs will default to \"rock\".");
 
-        if (humanChoice.toLowerCase() === "rock") {
-            alert("You have chosen rock");
-            return "rock";
-        } else if (humanChoice.toLowerCase() === "paper") {
-            alert("You have chosen paper");
-            return "paper";
-        } else if (humanChoice.toLowerCase() === "scissors") {
-            alert("You have chosen scissors");
-            return "scissors";
-        } else {
-            alert("Invalid Choice");
-            return "rock";
-        }
+    if (humanChoice.toLowerCase() === "rock") {
+        alert("You have chosen rock");
+    } else if (humanChoice.toLowerCase() === "paper") {
+        alert("You have chosen paper");
+    } else if (humanChoice.toLowerCase() === "scissors") {
+        alert("You have chosen scissors");
+    } else {
+        alert("Invalid Choice");
     }
+    return humanChoice.toLowerCase();
+}
 
 function playGame() {
 
@@ -70,7 +67,7 @@ function playGame() {
     } else {
         console.log("Draw - no winner! Equal number of points after 5 rounds.");
     }
-    
+
     console.log("Human Score = " + humanScore);
     console.log("Computer Score = " + computerScore);
 }
