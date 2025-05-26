@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 100);
 
@@ -25,34 +28,32 @@ function getHumanChoice() {
     return humanChoice.toLowerCase();
 }
 
-function playGame() {
 
-    let humanScore = 0;
-    let computerScore = 0;
-
-    function playRound(humanChoice, computerChoice) {
-        if (humanChoice === "rock" && computerChoice === "paper") {
-            console.log("You lose this round! Paper beats Rock.");
-            return ++computerScore;
-        } else if (humanChoice === "rock" && computerChoice === "scissors") {
-            console.log("You win this round! Rock beats Scissors.");
-            return ++humanScore;
-        } else if (humanChoice === "paper" && computerChoice === "rock") {
-            console.log("You win this round! Paper beats Rock.");
-            return ++humanScore;
-        } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            console.log("You lose this round! Scissors beats Paper.");
-            return ++computerScore;
-        } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            console.log("You win this round! Scissors beats Paper.");
-            return ++humanScore;
-        } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            console.log("You lose this round! Rock beats scissors.")
-            return ++computerScore;
-        } else {
-            console.log("DRAW! No points for anyone.")
-        }
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "paper") {
+        console.log("You lose this round! Paper beats Rock.");
+        return ++computerScore;
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        console.log("You win this round! Rock beats Scissors.");
+        return ++humanScore;
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
+        console.log("You win this round! Paper beats Rock.");
+        return ++humanScore;
+    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        console.log("You lose this round! Scissors beats Paper.");
+        return ++computerScore;
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        console.log("You win this round! Scissors beats Paper.");
+        return ++humanScore;
+    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        console.log("You lose this round! Rock beats scissors.")
+        return ++computerScore;
+    } else {
+        console.log("DRAW! No points for anyone.")
     }
+}
+
+function playGame() {
 
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
