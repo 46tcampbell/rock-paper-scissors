@@ -7,7 +7,7 @@ humanScoreDisplay.textContent = `Human Score: ${humanScore}`;
 const computerScoreDisplay = document.createElement('span');
 computerScoreDisplay.textContent = ` Computer Score: ${computerScore}`;
 const drawsDisplay = document.createElement('span');
-drawsDisplay.textContent = `Draws: ${draws}`
+drawsDisplay.textContent = ` Draws: ${draws}`
 const ul = document.createElement('ul');
 scoreDisplay.appendChild(humanScoreDisplay);
 scoreDisplay.appendChild(computerScoreDisplay);
@@ -61,6 +61,7 @@ function playRound(humanChoice, computerChoice) {
             computerScoreDisplay.textContent = ` Computer Score: ${computerScore}`;
             if (humanScore >= 5 || computerScore >= 5) {
                 isGameOver = true
+                clearBoard();
             }
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
             const li = document.createElement('li');
@@ -70,6 +71,7 @@ function playRound(humanChoice, computerChoice) {
             humanScoreDisplay.textContent = `Human Score: ${humanScore}`;
             if (humanScore >= 5 || computerScore >= 5) {
                 isGameOver = true
+                clearBoard();
             }
         } else if (humanChoice === "paper" && computerChoice === "rock") {
             const li = document.createElement('li');
@@ -79,6 +81,7 @@ function playRound(humanChoice, computerChoice) {
             humanScoreDisplay.textContent = `Human Score: ${humanScore}`;
             if (humanScore >= 5 || computerScore >= 5) {
                 isGameOver = true
+                clearBoard();
             }
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
             const li = document.createElement('li');
@@ -88,6 +91,7 @@ function playRound(humanChoice, computerChoice) {
             computerScoreDisplay.textContent = ` Computer Score: ${computerScore}`;
             if (humanScore >= 5 || computerScore >= 5) {
                 isGameOver = true
+                clearBoard();
             }
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
             const li = document.createElement('li');
@@ -97,6 +101,7 @@ function playRound(humanChoice, computerChoice) {
             humanScoreDisplay.textContent = `Human Score: ${humanScore}`;
             if (humanScore >= 5 || computerScore >= 5) {
                 isGameOver = true
+                clearBoard();
             }
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
             const li = document.createElement('li');
@@ -105,7 +110,8 @@ function playRound(humanChoice, computerChoice) {
             ++computerScore;
             computerScoreDisplay.textContent = ` Computer Score: ${computerScore}`;
             if (humanScore >= 5 || computerScore >= 5) {
-                isGameOver = true
+                isGameOver = true;
+                clearBoard();
             }
         } else {
             const li = document.createElement('li');
@@ -115,18 +121,11 @@ function playRound(humanChoice, computerChoice) {
             drawsDisplay.textContent = `Draws: ${draws}`
             if (humanScore >= 5 || computerScore >= 5) {
                 isGameOver = true
+                clearBoard();
             } else {
                 isGameOver = false
             }
         }
-    } else {
-        ul.remove();
-        humanScore = 0;
-        humanScoreDisplay.textContent = `Human Score: ${humanScore}`;
-        computerScore = 0;
-        computerScoreDisplay.textContent = ` Computer Score: ${computerScore}`;
-        draws = 0;
-        drawsDisplay.textContent = `Draws: ${draws}`
     }
 }
 
@@ -151,5 +150,26 @@ function playGame() {
 }
 
 // playGame()
+
+function clearBoard() {
+    ul.remove();
+    // humanScore = 0;
+    // humanScoreDisplay.textContent = `Human Score: ${humanScore}`;
+    // computerScore = 0;
+    // computerScoreDisplay.textContent = ` Computer Score: ${computerScore}`;
+    // draws = 0;
+    // drawsDisplay.textContent = `Draws: ${draws}`
+    const winningMessage = document.createElement('h1');
+    if (humanScore > computerScore) {
+        winningMessage.textContent = 'You win human. Nice work!'
+        humanScoreDisplay.style.color = 'green';
+        computerScoreDisplay.style.color = 'red';
+    } else {
+        winningMessage.textContent = 'You suck human. Boo!'
+        computerScoreDisplay.style.color = 'green';
+        humanScoreDisplay.style.color = 'red';
+    }
+    document.body.appendChild(winningMessage);
+}
 
 
